@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
+const formId = import.meta.env.VITE_FORMSPREE_ID;
+
 
 import {
   Code,
   Palette,
   Cloud,
+  Search,
   Monitor,
   Pencil,
   Github,
@@ -20,9 +23,8 @@ import Navbar from "./components/Navbar";
 import ChatBot from "./components/ChatBot";
 
 function App() {
-  const [state, handleSubmit] = useForm(process.env.FORMSREE_ID);
+  const [state, handleSubmit] = useForm(formId);
   const [isDark, setIsDark] = useState(true);
-
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
