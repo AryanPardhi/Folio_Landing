@@ -52,30 +52,30 @@ function App() {
       description:
         "Custom websites that are fast, secure, and responsive across all devices.",
     },
-    {
-      icon: <Palette className="h-8 w-8 text-purple-500" />,
-      title: "UI/UX Design",
-      description:
-        "User-centered design solutions that enhance user experience and engagement.",
-    },
-    {
-      icon: <Search className="h-8 w-8 text-purple-500" />,
-      title: "SEO Optimization",
-      description:
-        "Improve your online visibility and drive organic traffic to your website.",
-    },
+    // {
+    //   icon: <Palette className="h-8 w-8 text-purple-500" />,
+    //   title: "UI/UX Design",
+    //   description:
+    //     "User-centered design solutions that enhance user experience and engagement.",
+    // },
+    // {
+    //   icon: <Search className="h-8 w-8 text-purple-500" />,
+    //   title: "SEO Optimization",
+    //   description:
+    //     "Improve your online visibility and drive organic traffic to your website.",
+    // },
     {
       icon: <Cloud className="h-8 w-8 text-purple-500" />,
-      title: "Salesforce CRM",
+      title: "Salesforce",
       description:
         "Custom Salesforce solutions to streamline your business processes.",
     },
-    {
-      icon: <Pencil className="h-8 w-8 text-purple-500" />,
-      title: "Graphic Design",
-      description:
-        "Eye-catching designs that communicate your brand message effectively.",
-    },
+    // {
+    //   icon: <Pencil className="h-8 w-8 text-purple-500" />,
+    //   title: "Graphic Design",
+    //   description:
+    //     "Eye-catching designs that communicate your brand message effectively.",
+    // },
     {
       icon: <Code className="h-8 w-8 text-purple-500" />,
       title: "Custom Development",
@@ -86,25 +86,28 @@ function App() {
 
   const portfolio = [
     {
-      title: "E-commerce Platform",
-      description: "A full-featured online store with inventory management",
+      title: "Connectify",
+      description: "A full-featured social media platform with real-time chat and media sharing",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
       gif: "https://media.giphy.com/media/5k1Wu87CzkDfrx0Xwj/giphy.gif?cid=ecf05e47dbk6oh6hg01wnol8yxq727d9ytjjtidrslundlrf&ep=v1_gifs_related&rid=giphy.gif&ct=g",
+      link: "https://github.com/AryanPardhi/Connectify",
     },
     {
-      title: "Healthcare Dashboard",
-      description: "Interactive analytics platform for medical professionals",
+      title: "AI Chat Bot",
+      description: "Interactive AI-powered chatbot for customer support and engagement",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
       gif: "https://media.giphy.com/media/xT0Gqn9yuw8hnPGn5K/giphy.gif?cid=ecf05e47xutv1pcosqeg7ia1s82y9ft5hxplhkofj477jn4k&ep=v1_gifs_related&rid=giphy.gif&ct=g",
+      link: "https://github.com/AryanPardhi/AI_Chat_Bot",
     },
     {
-      title: "Educational App",
-      description: "Mobile-first learning platform for students",
+      title: "PLacify",
+      description: "A Placement management System for educational institutions to streamline placement processes and connect students with potential employers",
       image:
         "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=800",
       gif: "https://media.giphy.com/media/l3vRncXoginztrSs8/giphy.gif?cid=ecf05e47vzmdxq0w7stdp5s1jfu1ozuzqwsqudk9dfxerolw&ep=v1_gifs_related&rid=giphy.gif&ct=g",
+      link: "https://github.com/AryanPardhi/PLacify",
     },
   ];
 
@@ -115,7 +118,6 @@ function App() {
       features: [
         "Website Design",
         "Responsive Development",
-        "Basic SEO",
         "1 Month Support",
       ],
       isPopular: false,
@@ -126,8 +128,6 @@ function App() {
       features: [
         "Custom Design",
         "Advanced Development",
-        "Full SEO Package",
-        "CRM Integration",
         "3 Months Support",
       ],
       isPopular: true,
@@ -139,21 +139,20 @@ function App() {
         "Full-Service Solution",
         "Custom Development",
         "Premium Support",
-        "Dedicated Team",
       ],
       isPopular: false,
     },
-    {
-      title: "Custom Solution",
-      price: "Custom",
-      features: [
-        "Custom Debugging",
-        "Premium Support",
-        "Dedicated Team",
-        "Error Solution of pre Build Projects",
-      ],
-      isPopular: false,
-    }
+    // {
+    //   title: "Custom Solution",
+    //   price: "Custom",
+    //   features: [
+    //     "Custom Debugging",
+    //     "Premium Support",
+    //     "Dedicated Team",
+    //     "Error Solution of pre Build Projects",
+    //   ],
+    //   isPopular: false,
+    // }
   ];
 
   return (
@@ -268,6 +267,7 @@ function App() {
 
           <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {portfolio.map((project, index) => (
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -293,7 +293,9 @@ function App() {
                   </h3>
                   <p className="mt-2 text-gray-400">{project.description}</p>
                   <motion.a
-                    href="#"
+                    href={project.link}
+                     target="_blank"
+                      rel="noopener noreferrer"
                     whileHover={{ x: 10 }}
                     className="mt-4 inline-flex items-center text-purple-400 hover:text-purple-300"
                   >
@@ -302,6 +304,7 @@ function App() {
                   </motion.a>
                 </div>
               </motion.div>
+              </a>
             ))}
           </div>
         </div>
@@ -573,7 +576,7 @@ function App() {
                 <h3 className="text-lg font-semibold text-gray-900 flex items-center">
                   📧 Email Us
                 </h3>
-                <p className="text-gray-600">info@digitalcraft.com</p>
+                <p className="text-gray-600">aryan.pardhi02@gmail.com</p>
               </div>
               <div className="p-6 bg-white shadow-lg rounded-lg">
                 <h3 className="text-lg font-semibold text-gray-900 flex items-center">
@@ -646,30 +649,33 @@ function App() {
             <div>
               <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
               <div className="flex space-x-4">
-                <motion.a
+                {/* <motion.a
                   whileHover={{ scale: 1.2 }}
                   href="#"
                   className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
                 >
                   <Twitter className="h-6 w-6" />
-                </motion.a>
+                </motion.a> */}
                 <motion.a
                   whileHover={{ scale: 1.2 }}
-                  href="#"
+                  href="https://www.linkedin.com/in/aryan-pardhi-795129185/"
+                  target="_blank"
                   className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
                 >
                   <Linkedin className="h-6 w-6" />
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.2 }}
-                  href="#"
+                  href="https://github.com/AryanPardhi"
+                  target="_blank"
                   className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
                 >
                   <Github className="h-6 w-6" />
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.2 }}
-                  href="#"
+                  href="https://www.instagram.com/aryanpardhi"
+                  target="_blank"
                   className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
                 >
                   <Instagram className="h-6 w-6" />
